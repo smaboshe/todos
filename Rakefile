@@ -3,4 +3,10 @@
 
 require_relative "config/application"
 
+# Use Standard with Rake
+# Ref: https://github.com/testdouble/standard#using-with-rake
+if !Rails.env.production?
+  require "standard/rake"
+end
+
 Rails.application.load_tasks
